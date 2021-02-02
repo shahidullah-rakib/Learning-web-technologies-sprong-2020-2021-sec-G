@@ -1,6 +1,6 @@
 ﻿<stduents>
 	<student>
- 		<SLNO> 23 </SLNO>
+ 		<SlNo> 23 </SlNo>
 		<NAME> John Carter </NAME>
 		<AdmissionDate> 
 			<day> 25 </day>
@@ -10,7 +10,7 @@
 	</student>
 
 	<student>
- 		<SLNO> 29 </SLNO>
+ 		<SlNo> 29 </SlNo>
 		<NAME> Bob Marshal </NAME>
 		<AdmissionDate> 
 			<day> 13 </day>
@@ -20,7 +20,7 @@
 	</student>
 
 	<student>
- 		<SLNO> 35 </SLNO>
+ 		<SlNo> 35 </SlNo>
 		<NAME> Clark Kent </NAME>
 		<AdmissionDate> 17/06/2005
 			<day> 17 </day>
