@@ -7,6 +7,6 @@
 
             echo"Length of the Rectangle:".$length. "<br/>";
             echo"Width of the Rectangle:".$width. "<br/>";
-            echo "The Area is  : ".$area."<br/>";
+            echo "The Area is  : ".$area."<br/>"; 
             echo "The Perimeter is  : ".$perimeter;
 ?>
