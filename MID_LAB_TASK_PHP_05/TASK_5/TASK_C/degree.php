@@ -13,6 +13,6 @@
             <input type="checkbox" name="degree"> Msc <br> value="<?php if(isset($_POST['degree'])){ echo $_POST['degree']; }?>"> <br>
 			<input type="submit" name="submit" value="Submit">
 		</fieldset>
-	</form>
+	</form> 
 </body>
 </html>
