@@ -71,7 +71,7 @@ $err_pass="";
 <body>
 	<form method="POST" action="#">
 		<fieldset>
-			<legend>DEGREE</legend>
+			<legend>LOGIN</legend>
 			User Name : <input type="text" name="uname" placeholder ="Username"> <span><?php echo $err_uname;?></span><br>
             Password  :  <input type="password" name="password" placeholder ="Password"> <span><?php echo $err_pass;?></span> <br>
             _______________________________________________________________ <br>
