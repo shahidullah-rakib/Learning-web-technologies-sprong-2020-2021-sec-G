@@ -3,7 +3,7 @@
 	session_start();
 
 	if(isset($_POST['submit']))
-    {
+    { 
 
 		$user = $_SESSION['current_user'];
 		$email2 = $_POST['email2'];
