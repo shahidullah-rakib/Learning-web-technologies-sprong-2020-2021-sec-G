@@ -10,7 +10,7 @@
 		$email 		= $_POST['email'];
 
 		if($username == "" || $password == "" || $email == ""){
-			echo "null value found...";
+			echo "null value found..."; 
 		}else{
 			if($password == $repass){
 
