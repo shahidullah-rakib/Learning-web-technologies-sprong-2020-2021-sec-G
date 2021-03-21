@@ -1,6 +1,7 @@
 <?php
 	$title = "User List Page";
 	include('header.php');
+	require_once('../model/userModel.php');
 ?>
 
 	<a href="home.php">Back</a> |
@@ -9,42 +10,39 @@
 	
 	<h1>User list</h1>
 
-	<table border="1">
+	<?php 
+		echo "<table border='1'>
 		<tr>
 			<td>ID</td>
-			<td>NAME</td>
-			<td>EMAIL</td>
-			<td>ACTION</td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>ALAMIN</td>
-			<td>ALAMIN@GMAIL.COM</td>
-			<td>
-				<a href="edit.php?id=1"> EDIT</a> |
-				<a href="delete.php?id=1"> DELETE</a>
-			</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>ALAMIN</td>
-			<td>ALAMIN@GMAIL.COM</td>
-			<td>
-				<a href="edit.php?id=2"> EDIT</a> |
-				<a href="delete.html"> DELETE</a>
-			</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>ALAMIN</td>
-			<td>ALAMIN@GMAIL.COM</td>
-			<td>
-				<a href="edit.php?id=3"> EDIT</a> |
-				<a href="delete.html"> DELETE</a>
-			</td>
-		</tr>
-	</table>
+			<td>Name</td>
+			<td>email</td>
+			<td>Action</td>
+		</tr>";
+	
+		$row=getAllUser();
+		
+		foreach($row as $var){
+			
+			echo "
+					<tr>
+						<td>{$var['ID']}</td>
+						<td>{$var['name']}</td>
+						<td>{$var['email']}</td>
+						<td><a href='edit.php?id={$var['ID']}'>edit</a> |
+							<a href='../controller/delete.php?id={$var['ID']}'>delete</a>
+						</td>
+						
+				";
+				//?id={$row['ID']}
+			
+		}
 
+			echo "</table>";
+
+
+?>
+
+	
 <?php
 	include('footer.php');
 ?>
