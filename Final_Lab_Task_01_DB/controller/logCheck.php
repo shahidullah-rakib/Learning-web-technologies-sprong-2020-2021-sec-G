@@ -22,7 +22,7 @@
 				header('location: ../view/home.php');
 			}else{
 				echo "invalid user...";
-			}
+			} 
 		}
 	}
 
