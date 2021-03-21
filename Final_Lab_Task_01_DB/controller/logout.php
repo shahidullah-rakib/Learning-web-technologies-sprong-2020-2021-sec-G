@@ -4,4 +4,4 @@
 	unset($_SESSION['flag']);
 	header('location: ../view/login.html');
 
-?>
+?> 
