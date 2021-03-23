@@ -3,7 +3,7 @@
     session_start();
     if(isset($_POST['submit'])){
 
-        $name=$_POST['productName'];
+        $name=$_POST['productName']; 
         $bprice=$_POST['buyingPrice'];
         $sprice=$_POST['sellingPrice'];
 
