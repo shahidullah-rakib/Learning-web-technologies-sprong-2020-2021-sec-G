@@ -1,40 +1,62 @@
 <?php
-	require_once('../model/userModel.php');
-	$title = "Edit Page";
-	include('header.php');
-	$id=$_GET['id'];
-	$data=deleteproduct($id);
+    session_start();
+    require_once('../model/userModel.php');
+    $id=$_GET['id'];
+	$data=getProductbyId($id);
 
 	$_SESSION['edit_id']=$id;
+
 ?>
 
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
 	<form method="post" action="../controller/update.php">
 		<fieldset>
-			<legend>EDIT User</legend>
+			<legend>EDIT PRODUCT</legend>
 			<table>
 				<tr>
-					<td>Username</td>
-					<td><input type="text" name="name" value="<?php echo $data['username'] ?>"></td>
+					<td>Name</td>
+					<td><input type="text" name="productName" value="<?php echo$data['name'] ?>"></td>
 				</tr>
 				<tr>
-					<td>Password</td>
-					<td><input type="password" name="pass" value="<?php echo $data['password'] ?>"></td>
-				</tr>
-				
-				<tr>
-					<td>Email</td>
-					<td><input type="email" name="email" value="<?php echo $data['email'] ?>"></td>
+					<td>Buying price</td>
+					<td><input type="text" name="buyingPrice" value="<?php echo$data['buyingPrice'] ?>"></td>
 				</tr>
 				<tr>
-					<td></td>
+					<td>Selling Price</td>
+					<td><input type="text" name="sellingPrice" value="<?php echo$data['sellingPrice'] ?>"></td>
+				</tr>
+                <tr>
+                    <td colspan="2">
+                        <hr>
+                    </td>
+                </tr>
+				<tr>
+					<td><input type="checkbox" name="display" id=""></td>
+                    <td>display</td>
+				</tr>
+                <tr>
+                    <td colspan="2">
+                        <hr>
+                    </td>
+                </tr>
+				<tr>
 					<td>
-						<input type="submit" name="submit" value="Update"> 
-						<a href="user_list.php">Back</a>
+						<input type="submit" name="submit" value="Save"> 
+						
 					</td>
+                    <td></td>
 				</tr>
 			</table>
 		</fieldset>
 	</form>
-<?php
-	include('footer.php');
-?>
+</body>
+</html>
