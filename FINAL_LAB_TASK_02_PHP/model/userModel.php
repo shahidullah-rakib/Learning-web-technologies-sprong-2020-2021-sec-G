@@ -2,22 +2,10 @@
 	
 require_once('db.php');
 
-function validateUser($productName, $buyingPrice){
-	$conn = getConnection();
-	$sql = "select * from users where productName='{$productName}' and buyingPrice='{$buyingPrice}'";
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
 
-	if(count($row) > 0){
-		return true;
-	}else{
-		return false;
-	}
-}
-
-function insertUser($user){
+function insertproduct($product){
 	$conn = getConnection();
-	$sql = "insert into users values('', '{$user['productName']}', '{$user['buyingPrice']}', '{$user['sellingPrice']}', '{$user['type']}')";
+	$sql = "insert into products values('', '{$product['productName']}', '{$product['buyingPrice']}', '{$product['sellingPrice']}', '{$product['display']}')";
 
 	$result = mysqli_query($conn, $sql);
 
@@ -29,31 +17,31 @@ function insertUser($user){
 
 }
 
-function getUserbyId($id){
+function getproductbyId($id){
 	
 	$conn = getConnection();
-	$sql = "select * from users where id='{$id}";
+	$sql = "select * from products where id='{$id}";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 
 	return $row;
 }
 
-function getAllUser(){
+function getAllproduct(){
 
 	$conn = getConnection();
-	$sql = "select * from users";
+	$sql = "select * from products";
 	$result = mysqli_query($conn, $sql);
-	$users = [];
+	$products = [];
 	while ($row = mysqli_fetch_assoc($result)) {
-		array_push($users, $row);
+		array_push($products, $row);
 	}
-	return $users;
+	return $products;
 }
 
-function updateUser($user){
+function updateproduct($product){
 	$conn = getConnection();
-	$sql = "update users set productName='{$user['productName']}', buyingPrice='{$user['buyingPrice']}', sellingPrice='{$user['sellingPrice']}'";
+	$sql = "update products set productName='{$product['productName']}', buyingPrice='{$product['buyingPrice']}', sellingPrice='{$product['sellingPrice']}'";
 	$result = mysqli_query($conn, $sql);
 	
 	if($result){
@@ -63,9 +51,9 @@ function updateUser($user){
 	}
 }
 
-function deleteUser($id){
+function deleteproduct($id){
 	$conn = getConnection();
-	$sql = "delete from users where id='{$id}";
+	$sql = "delete from products where id='{$id}";
 	$result = mysqli_query($conn, $sql);
 	
 	if($result){
@@ -75,9 +63,9 @@ function deleteUser($id){
 	}
 }
 
-function getUserByName($productName){
+function getproductByName($productName){
 	$conn = getConnection();
-	$sql = "select * from users where productName='{$productName}";
+	$sql = "select * from products where productName='{$productName}";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	return $row;
