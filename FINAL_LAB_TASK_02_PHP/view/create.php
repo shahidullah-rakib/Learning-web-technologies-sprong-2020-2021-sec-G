@@ -5,7 +5,7 @@
 
 <form method="post" action="../controller/createCheck.php">
 	<fieldset>
-		<legend>EDIT PRODUCT</legend>
+		<legend>ADD PRODUCT</legend>
 		<table>
 			<tr>
 				<td>Name</td>
