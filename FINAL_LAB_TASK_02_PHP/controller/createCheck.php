@@ -14,14 +14,14 @@
 		}else{
 			if($productName != ""){
 
-				$user = [	
+				$product = [	
 							'productName'	=> $productName, 
 							'buyingPrice'	=> $buyingPrice, 
 							'sellingPrice'		=>$sellingPrice, 
 							'display'		=>'display'
 						];
 				
-				$status = insertUser($user);				
+				$status = insertproduct($product);				
 
 				if($status){
 					header('location: ../view/create.php');
